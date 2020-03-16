@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'sp-notification',
   template: `
     <p>
-      notification works!
+      notification works very well!
     </p>
   `,
   styles: []
