@@ -1,0 +1,17 @@
+{
+  "name": "@howtechworx/notifications",
+  "version": "1.0.0",
+  "description": "It is basically a widget to show various colorful notications dynamically. For Example: No internet connection",
+  "author": "Sakshay Phanda",
+  "keywords": ["angular", "javascript", "typescript", "notification", "directive", "module"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sakshayphanda/Notifications.git"
+  },
+  "license": "MIT",
+
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  }
+}
