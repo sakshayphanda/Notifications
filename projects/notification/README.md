@@ -15,16 +15,17 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 | [index: number] | Index of the particular notification |
 
 
-Example: 
---HTML--
-<ng-container *ngFor="let id of toShow; let i = index">
+## Example ##
+
+# HTML #
+> <ng-container *ngFor="let id of toShow; let i = index">
   <sp-notification [index]="i" [data]="notificationsObj[id]" (actionPerformed)="btnClicked($event)"
     (onClose)="closed(i)">
   </sp-notification>
 </ng-container>
 
---TS--
- notificationsObj = {
+# TS #
+> notificationsObj = {
     offline: {
       style: {
         background: 'red'
@@ -50,7 +51,7 @@ Example:
     }
   };
 
-  toShow = ['Online'];
+>  toShow = ['Online'];
 
 
 ### Output Variables
