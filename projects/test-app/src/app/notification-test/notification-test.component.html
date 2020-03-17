@@ -1,0 +1,12 @@
+<div class="notification">
+  <div class="notification__content">{{message}}</div>
+  <ng-container *ngIf="buttons.length">
+    <div class="notification__btns">
+      <ng-container *ngFor="let btn of buttons">
+        <button id="btn['id']" class="btn btn--active" (click)="buttonClicked(btn['id'])">{{btn['name']}}</button>
+      </ng-container>
+    </div>
+  </ng-container>
+
+  <div class="close" (click) ="closeButtonClicked()">x</div>
+</div>

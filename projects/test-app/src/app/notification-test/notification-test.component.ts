@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'sp-notification',
-  templateUrl: './notification.component.html',
-  styleUrls: ['./notification.component.sass']
+  selector: 'app-notification-test',
+  templateUrl: './notification-test.component.html',
+  styleUrls: ['./notification-test.component.sass']
 })
-export class NotificationComponent implements OnInit {
+export class NotificationTestComponent implements OnInit {
 
   @Input('message') message: string;
   @Input('buttons') buttons: [];
@@ -26,4 +26,5 @@ export class NotificationComponent implements OnInit {
   closeButtonClicked() {
     this.onClose.emit(true);
   }
+
 }

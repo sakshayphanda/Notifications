@@ -1,0 +1,43 @@
+
+
+.notification
+  background: var(--bgColor, rgb(126, 192, 82))
+  height: 100px
+  width: 400px
+  display: flex
+  flex-direction: column
+  border-radius: 3px
+  position: absolute
+  right: 10px
+  .close
+    position: absolute
+    right: 5px
+    top: 5px
+    color: white
+    cursor: pointer
+  &__content
+    color: white
+    flex: 4
+    padding: 10px
+    font-size: 0.8rem
+  &__btns
+    flex: 1
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    padding: 10px
+    .btn
+      background: transparent
+      color: white
+      border: 1px solid white
+      padding: 5px
+      height: 30px
+      font-size: 0.8rem
+      margin: 2px
+      cursor: pointer
+      &:hover
+        color: black
+        background: white
+      &--active
+        color: black
+        background: white

@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "lib:build": "ng build notification",
-    "lib:publish": "cd dist/notification && npm publish --access=public"
+    "lib:publish": "cd dist/notification && npm publish --access=public",
+    "lib:pack": "cd dist/notification && npm pack"
   },
   "private": true,
   "dependencies": {
@@ -22,7 +23,7 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "rxjs": "~6.4.0",
-    "sp-notifications": "^1.0.0",
+    "sp-notifications": "file:dist/notification/sp-notifications-1.0.3.tgz",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

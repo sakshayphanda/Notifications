@@ -6,5 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'test-app';
+  title = 'This is  message text';
+  open = true;
+  buttons = [
+    {
+      id: 'done',
+      name: 'Done'
+    }, {
+      id: 'cancel',
+      name: 'Cancel'
+    }
+  ];
+
+
+  btnClicked($event) {
+    console.log($event);
+  }
+  closed() {
+    console.log('closed');
+    this.open = false;
+  }
 }

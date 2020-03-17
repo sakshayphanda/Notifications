@@ -1,1 +1,9 @@
-<sp-notification></sp-notification>
+<!-- <sp-notification></sp-notification> -->
+
+<sp-notification *ngIf="open"
+[message]="title"
+[buttons] = "buttons"
+[bgColor] = "'red'"
+(btnClicked) = "btnClicked($event)"
+(onClose) = "closed()">
+</sp-notification>
