@@ -1,20 +1,22 @@
 
+@keyframes slide
+  0%
+    right: -1000px
+  100%
+    right: 10px
 
 .notification
-  background: var(--bgColor, rgb(126, 192, 82))
+  animation: slide 3s ease-in-out
+  background: rgb(126, 192, 82)
   height: 100px
   width: 400px
+  font-size: 1rem
   display: flex
   flex-direction: column
   border-radius: 3px
   position: absolute
   right: 10px
-  .close
-    position: absolute
-    right: 5px
-    top: 5px
-    color: white
-    cursor: pointer
+
   &__content
     color: white
     flex: 4

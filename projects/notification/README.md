@@ -11,9 +11,47 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 | Variable | README |
 | ------ | ------ |
-| [bgColor] | To change the color of the background |
-| [message] | Text you want to show |
-| [buttons] | array of buttons you want to show |
+| [data: object] | All the content you want to show in the notification  |
+| [index: number] | Index of the particular notification |
+
+
+Example: 
+--HTML--
+<ng-container *ngFor="let id of toShow; let i = index">
+  <sp-notification [index]="i" [data]="notificationsObj[id]" (actionPerformed)="btnClicked($event)"
+    (onClose)="closed(i)">
+  </sp-notification>
+</ng-container>
+
+--TS--
+ notificationsObj = {
+    offline: {
+      style: {
+        background: 'red'
+      },
+      message: 'No internet',
+      buttons: [
+        {
+          id: 'done',
+          name: 'Done'
+        }, {
+          id: 'reload',
+          name: 'Reload'
+        }
+      ]
+    },
+    online: {
+      style: {
+        background: 'green'
+      },
+      message: 'Internet is now connected',
+      buttons: [
+      ]
+    }
+  };
+
+  toShow = ['Online'];
+
 
 ### Output Variables
 

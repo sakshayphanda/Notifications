@@ -7,17 +7,33 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class NotificationTestComponent implements OnInit {
 
-  @Input('message') message: string;
+  @Input('data') data: object;
+  @Input('index') index: number;
   @Input('buttons') buttons: [];
-  @Input('bgColor') bgColor;
+  @Input('style') style;
   @Output('actionPerformed') actionPerformed = new EventEmitter();
   @Output('onClose') onClose = new EventEmitter();
   constructor() { }
 
+  // ngOnInit() {
+  //   // document.documentElement.style
+  //   // .setProperty('--bgColor', this.bgColor);
+
+  //   // document.querySelector('.notification')['style'].top = `${this.index   * 40}px`;
+  // }
   ngOnInit() {
-    document.documentElement.style
-    .setProperty('--bgColor', this.bgColor);
-  }
+    this.checkRequiredFields(this.data);
+ }
+
+ ngOnChanges(changes) {
+    this.checkRequiredFields(this.data);
+ }
+
+ checkRequiredFields(input) {
+    if(input === null) {
+       throw new Error("Attribute 'data' is required");
+    }
+ }
 
   buttonClicked(btnId) {
     this.actionPerformed.emit(btnId);
