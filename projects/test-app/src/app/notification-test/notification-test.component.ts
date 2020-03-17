@@ -10,7 +10,7 @@ export class NotificationTestComponent implements OnInit {
   @Input('message') message: string;
   @Input('buttons') buttons: [];
   @Input('bgColor') bgColor;
-  @Output('btnClicked') btnClicked = new EventEmitter();
+  @Output('actionPerformed') actionPerformed = new EventEmitter();
   @Output('onClose') onClose = new EventEmitter();
   constructor() { }
 
@@ -20,7 +20,7 @@ export class NotificationTestComponent implements OnInit {
   }
 
   buttonClicked(btnId) {
-    this.btnClicked.emit(btnId);
+    this.actionPerformed.emit(btnId);
   }
 
   closeButtonClicked() {
