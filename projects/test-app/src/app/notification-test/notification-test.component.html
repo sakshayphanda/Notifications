@@ -1,0 +1,11 @@
+<div class="notification" [ngStyle] = "data['style']" [style.top.px] = "index * 110 + 10">
+  <div class="notification__content">{{data['message']}}</div>
+  <ng-container *ngIf="data['buttons']">
+    <div class="notification__btns">
+      <ng-container *ngFor="let btn of data['buttons']">
+        <button id="btn['id']" class="btn" (click)="buttonClicked(btn['id'])">{{btn['name']}}</button>
+      </ng-container>
+      <button id="btn['id']" class="btn" (click)="closeButtonClicked()">Close</button>
+    </div>
+  </ng-container>
+</div>

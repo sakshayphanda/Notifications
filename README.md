@@ -1,27 +1,98 @@
-# Notifications
+# Notification
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
 
-## Development server
+# New Features!
+  - Add dynamic Styles to your each of your notifications
+ 
+# How to install
+You can get sp-notifications via npm by either adding it as a new dependency to your package.json file and running npm install, or running the following command:
+```sh
+npm install sp-notifications
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Import the NotificationModule
+First of all, make sp-notifications globally available to your Angular application by importing the NotificationModule the your root Angular module. For example:
+```sh
+import { NotificationModule} from 'sp-notifications';
+ 
+@NgModule({
+    imports: [NotificationModule]
+})
+export class AppModule {}
+```
 
-## Code scaffolding
+### Input Variables
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+| Variable | README |
+| ------ | ------ |
+| [data] | All the content you want to show in the notification  |
+| [index] | Index of the particular notification widget|
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Example ##
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### HTML ###
+```sh
+ <ng-container *ngFor="let id of toShow; let i = index">
+  <sp-notification [index]="i" 
+  [data]="notificationsObj[id]" 
+  (actionPerformed)="btnClicked($event)"
+  (onClose)="closed(i)">
+  </sp-notification>
+</ng-container>
 
-## Running end-to-end tests
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### TS ###
 
-## Further help
+```sh
+ toShow = ['online', 'offline'];
+```
+
+
+```sh
+notificationsObj = {
+    offline: {
+      style: {
+        background: 'red'
+      },
+      message: 'No internet',
+      buttons: [
+        {
+          id: 'done',
+          name: 'Done'
+        }, {
+          id: 'reload',
+          name: 'Reload'
+        }
+      ]
+    },
+    online: {
+      style: {
+        background: 'green'
+      },
+      message: 'Internet is now connected',
+      buttons: [
+      ]
+    }
+};
+```
+### Output Variables
+
+
+| Events | README |
+| ------ | ------ |
+| (actionPerformed) | Triggered when click is performed on one of the actions |
+| (onOpen) | Triggered when the notification widget is initialised|
+| (onClose) | Triggered when the close button is clicked|
+
+### Creator
+Sakshay Phanda
+
+E-Mail: sakshayphanda03@gmail.com
+LinkedIn: https://www.linkedin.com/in/sakshay-phanda-b5a6977a 
+
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
