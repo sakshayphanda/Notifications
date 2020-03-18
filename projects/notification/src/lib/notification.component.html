@@ -3,7 +3,7 @@
   <ng-container *ngIf="data['buttons']">
     <div class="notification__btns">
       <ng-container *ngFor="let btn of data['buttons']">
-        <button id="btn['id']" class="btn" (click)="buttonClicked(btn['id'])">{{btn['name']}}</button>
+        <button id="btn['id']" [ngStyle] = "btn['style']" class="btn" (click)="buttonClicked(btn['id'])">{{btn['name']}}</button>
       </ng-container>
       <button id="btn['id']" class="btn" (click)="closeButtonClicked()">Close</button>
     </div>

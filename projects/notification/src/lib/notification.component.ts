@@ -10,16 +10,13 @@ export class NotificationComponent implements OnInit, OnChanges {
   @Input('index') index: number;
   @Output('actionPerformed') actionPerformed = new EventEmitter();
   @Output('onClose') onClose = new EventEmitter();
+  @Output('onOpen') onOpen = new EventEmitter();
+
+
   constructor() {}
-
-  // ngOnInit() {
-  //   // document.documentElement.style
-  //   // .setProperty('--bgColor', this.bgColor);
-
-  //   // document.querySelector('.notification')['style'].top = `${this.index   * 40}px`;
-  // }
   ngOnInit() {
     this.checkRequiredFields(this.data);
+    this.onOpen.emit(true);
   }
 
   ngOnChanges(changes) {

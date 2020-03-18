@@ -3,29 +3,57 @@
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
 
 # New Features!
+  - Add dynamic Styles to your each of your notifications
+ 
+# How to install
+You can get sp-notifications via npm by either adding it as a new dependency to your package.json file and running npm install, or running the following command:
+```sh
+npm install sp-notifications
+```
 
-  - Add backgroud color to your widget
-  
+### Import the NotificationModule
+First of all, make sp-notifications globally available to your Angular application by importing the NotificationModule the your root Angular module. For example:
+```sh
+import { NotificationModule} from 'sp-notifications';
+ 
+@NgModule({
+    imports: [NotificationModule]
+})
+export class AppModule {}
+```
+
 ### Input Variables
 
 
 | Variable | README |
 | ------ | ------ |
-| [data: object] | All the content you want to show in the notification  |
-| [index: number] | Index of the particular notification |
+| [data] | All the content you want to show in the notification  |
+| [index] | Index of the particular notification widget|
 
 
 ## Example ##
 
-# HTML #
-> <ng-container *ngFor="let id of toShow; let i = index">
-  <sp-notification [index]="i" [data]="notificationsObj[id]" (actionPerformed)="btnClicked($event)"
-    (onClose)="closed(i)">
+### HTML ###
+```sh
+ <ng-container *ngFor="let id of toShow; let i = index">
+  <sp-notification [index]="i" 
+  [data]="notificationsObj[id]" 
+  (actionPerformed)="btnClicked($event)"
+  (onClose)="closed(i)">
   </sp-notification>
 </ng-container>
 
-# TS #
-> notificationsObj = {
+```
+
+### TS ###
+
+```sh
+ toShow = ['online', 'offline'];
+```
+
+
+```sh
+notificationsObj = {
     offline: {
       style: {
         background: 'red'
@@ -49,36 +77,22 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
       buttons: [
       ]
     }
-  };
-
->  toShow = ['Online'];
-
-
+};
+```
 ### Output Variables
 
 
-| Variable | README |
+| Events | README |
 | ------ | ------ |
-| (actionPerformed) | When click is performed on one of the actions |
+| (actionPerformed) | Triggered when click is performed on one of the actions |
+| (onOpen) | Triggered when the notification widget is initialised|
 | (onClose) | Triggered when the close button is clicked|
 
-## Code scaffolding
+### Creator
+Sakshay Phanda
 
-Run `ng generate component component-name --project notification` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project notification`.
-> Note: Don't forget to add `--project notification` or else it will be added to the default project in your `angular.json` file. 
+E-Mail: sakshayphanda03@gmail.com
+LinkedIn: https://www.linkedin.com/in/sakshay-phanda-b5a6977a 
 
-## Build
-
-Run `ng build notification` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Publishing
-
-After building your library with `ng build notification`, go to the dist folder `cd dist/notification` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test notification` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

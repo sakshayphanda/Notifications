@@ -1,6 +1,6 @@
 {
   "name": "sp-notifications",
-  "version": "1.0.8",
+  "version": "1.1.0-beta",
   "description": "It is basically a widget to show various colorful notications dynamically. For Example: No internet connection",
   "author": "Sakshay Phanda",
   "keywords": ["angular", "javascript", "typescript", "notification", "directive", "module"],
