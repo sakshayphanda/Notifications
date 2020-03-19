@@ -3,15 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NotificationModule} from 'sp-notifications';
-import { NotificationTestComponent } from './notification-test/notification-test.component';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
   declarations: [
-    AppComponent,
-    NotificationTestComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    NotificationModule
+    NotificationModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

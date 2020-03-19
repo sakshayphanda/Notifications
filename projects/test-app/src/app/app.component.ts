@@ -8,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   notificationsObj = {
     offline: {
+      icon: 'fas fa-exclamation-circle',
       style: {
-        background: 'red'
+        background: '#ec5656'
       },
       message: 'No internet',
       buttons: [
@@ -23,8 +24,9 @@ export class AppComponent implements OnInit {
       ]
     },
     online: {
+      icon: 'fas fa-wifi',
       style: {
-        background: 'green'
+        background: '#71b971'
       },
       message: 'Internet is now connected',
       buttons: [
@@ -32,9 +34,9 @@ export class AppComponent implements OnInit {
     },
     basic: {
       style: {
-        background: 'blue'
+        background: '#6565e8'
       },
-      message: 'convert your account to premium',
+      message: 'convert your account to premium because that is necessary for us to earn money',
       buttons: [
         {
           id: 'convert',
@@ -67,7 +69,7 @@ export class AppComponent implements OnInit {
       window.location.reload();
     }
   }
-  closed(n) {
+  closed(id, n) {
     console.log('closed');
     this.toShow.splice(n, 1);
   }

@@ -2,7 +2,7 @@
 
 <ng-container *ngFor="let id of toShow; let i = index">
   <sp-notification [index]="i" [data]="notificationsObj[id]" (actionPerformed)="btnClicked($event)"
-    (onClose)="closed(i)">
+    (onClose)="closed(id, i)">
   </sp-notification>
 
 </ng-container>
