@@ -2,8 +2,11 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
 
+![sample](https://github.com/sakshayphanda/Notifications/blob/master/projects/notification/demo.png?raw=true)
+
 # New Features!
   - Add dynamic Styles to your each of your notifications
+  - Support for FontAwesome icons
  
 # How to install
 You can get sp-notifications via npm by either adding it as a new dependency to your package.json file and running npm install, or running the following command:
