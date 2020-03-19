@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
       style: {
         background: '#6565e8'
       },
-      message: 'convert your account to premium because that is necessary for us to earn money',
+      message: 'convert your account to premium because that is necessary for the best experience',
       buttons: [
         {
           id: 'convert',
