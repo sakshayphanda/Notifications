@@ -33,6 +33,14 @@ export class AppModule {}
 | [data] | All the content you want to show in the notification  |
 | [index] | Index of the particular notification widget|
 
+### Output Variables
+
+
+| Events | README |
+| ------ | ------ |
+| (actionPerformed) | Triggered when click is performed on one of the actions |
+| (onOpen) | Triggered when the notification widget is initialised|
+| (onClose) | Triggered when the close button is clicked|
 
 ## Example ##
 
@@ -56,31 +64,44 @@ export class AppModule {}
 
 
 ```sh
-notificationsObj = {
+  notificationsObj = {
     offline: {
+      icon: 'fas fa-exclamation-circle',
       style: {
-        background: 'red'
+        background: '#ec5656'
       },
       message: 'No internet',
       buttons: [
-        {
-          id: 'done',
-          name: 'Done'
-        }, {
-          id: 'reload',
-          name: 'Reload'
-        }
       ]
     },
     online: {
+      icon: 'fas fa-wifi',
       style: {
-        background: 'green'
+        background: '#71b971'
       },
       message: 'Internet is now connected',
+      buttons: [ {
+        id: 'reload',
+        name: 'Reload'
+      }
+      ]
+    },
+    basic: {
+      style: {
+        background: '#6565e8'
+      },
+      message: 'convert your account to premium because that is necessary for the best experience',
       buttons: [
+        {
+          id: 'getpro',
+          name: 'Get Pro'
+        }, {
+          id: 'getultra',
+          name: 'Get Ultra'
+        }
       ]
     }
-};
+  };
 ```
 
 ```sh
@@ -95,19 +116,12 @@ closed(id, n) {
     this.toShow.splice(n, 1);
   }
 ```
-### Output Variables
-
-
-| Events | README |
-| ------ | ------ |
-| (actionPerformed) | Triggered when click is performed on one of the actions |
-| (onOpen) | Triggered when the notification widget is initialised|
-| (onClose) | Triggered when the close button is clicked|
 
 ## Creator
 ### Sakshay Phanda
 
 >E-Mail: sakshayphanda03@gmail.com
+
 >LinkedIn: https://www.linkedin.com/in/sakshay-phanda-b5a6977a 
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

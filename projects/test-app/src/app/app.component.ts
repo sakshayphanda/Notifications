@@ -14,13 +14,6 @@ export class AppComponent implements OnInit {
       },
       message: 'No internet',
       buttons: [
-        {
-          id: 'done',
-          name: 'Done'
-        }, {
-          id: 'reload',
-          name: 'Reload'
-        }
       ]
     },
     online: {
@@ -29,7 +22,10 @@ export class AppComponent implements OnInit {
         background: '#71b971'
       },
       message: 'Internet is now connected',
-      buttons: [
+      buttons: [ {
+        id: 'reload',
+        name: 'Reload'
+      }
       ]
     },
     basic: {
@@ -39,11 +35,11 @@ export class AppComponent implements OnInit {
       message: 'convert your account to premium because that is necessary for the best experience',
       buttons: [
         {
-          id: 'convert',
-          name: 'Convert'
+          id: 'getpro',
+          name: 'Get Pro'
         }, {
-          id: 'reload',
-          name: 'Reload'
+          id: 'getultra',
+          name: 'Get Ultra'
         }
       ]
     }
@@ -62,7 +58,7 @@ export class AppComponent implements OnInit {
     }, 4000);
     setTimeout(()=> {
       this.toShow.push('basic');
-    }, 2000);
+    }, 5000);
   }
   btnClicked($event) {
     if($event === 'reload') {

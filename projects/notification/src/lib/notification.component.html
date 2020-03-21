@@ -1,18 +1,22 @@
 <ng-container *ngIf="data">
-  <div class="notification" [ngStyle]="data['style']" [style.top.px]="index * 125 + 10">
+  <div class="notification" [ngStyle]="data['style']">
     <div class="notification__content">
       <i *ngIf="data['icon']" class="{{data['icon']}} icon"></i>
       <p class="text">{{data['message']}}</p>
     </div>
-    <ng-container *ngIf="data['buttons']">
+    <ng-container *ngIf="data['buttons'] && data['buttons'].length">
       <div class="notification__btns">
         <ng-container *ngFor="let btn of data['buttons']">
           <button id="btn['id']" [ngStyle]="btn['style']" class="btn"
             (click)="buttonClicked(btn['id'])">{{btn['name']}}</button>
         </ng-container>
-        <button id="btn['id']" class="btn" (click)="closeButtonClicked()">Close</button>
       </div>
     </ng-container>
+
+    <div class="notification__closeBtn" (click)="closeButtonClicked()">
+      <i class="far fa-times-circle"></i>
+    </div>
   </div>
+
 
 </ng-container>
