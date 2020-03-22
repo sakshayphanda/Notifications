@@ -37,11 +37,11 @@ export class NotificationComponent implements OnInit, OnChanges, AfterViewInit {
     }
   }
   ngAfterViewInit() {
-    if(this.index === 0) {
+    if (this.index === 0) {
       const newElement = document.getElementsByClassName('notification')[
         this.index
       ];
-      newElement['style']['top'] = '10px';
+      newElement[`style`][`top`] = '10px';
     }
     if (this.index > 0) {
       const previousElement: Element = document.getElementsByClassName(
@@ -60,7 +60,7 @@ export class NotificationComponent implements OnInit, OnChanges, AfterViewInit {
         this.index
       ];
       const newTop: number = height + top + 10;
-      newElement['style']['top'] = newTop + 'px';
+      newElement[`style`][`top`] = newTop + 'px';
     }
   }
 
@@ -78,7 +78,7 @@ export class NotificationComponent implements OnInit, OnChanges, AfterViewInit {
       'notification')[this.index];
 
     let elementTop = +document.getElementsByClassName(
-        'notification')[this.index]['style']['top'].split('px')[0];
+        'notification')[this.index][`offsetTop`];
 
     let diff = 0;
 
@@ -89,11 +89,11 @@ export class NotificationComponent implements OnInit, OnChanges, AfterViewInit {
           const currentElementStyle = window.getComputedStyle(arrOfElements[index], null);
           const currentHeight = +currentElementStyle.getPropertyValue('height').split('px')[0];
           elementToBeShiftedTo = arrOfElements[index];
-          const value = +arrOfElements[index]['style']['top'].split('px')[0];
-          arrOfElements[index]['style']['top'] = elementTop + diff + 'px';
-          elementTop = value;
+          const offsetTop = +arrOfElements[index][`offsetTop`];
+          arrOfElements[index][`style`][`top`] = elementTop + diff + 'px';
+          elementTop = offsetTop;
 
-          if(prevHeight !== currentHeight) {
+          if (prevHeight !== currentHeight) {
             diff = currentHeight - prevHeight;
           }
         }
