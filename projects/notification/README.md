@@ -5,8 +5,13 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 ![sample](https://github.com/sakshayphanda/Notifications/blob/master/projects/notification/demo.png?raw=true)
 
 # New Features!
+  - Bug fixed for close button not showing.
   - Add dynamic Styles to your each of your notifications
   - Support for FontAwesome icons
+  Please Note: Font Awesome must be installed in our angular project. Add the following to head tag of index.html.
+```sh
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+```
  
 # How to install
 You can get sp-notifications via npm by either adding it as a new dependency to your package.json file and running npm install, or running the following command:

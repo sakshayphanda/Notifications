@@ -20,11 +20,11 @@ export class NotificationComponent implements OnInit, OnChanges, AfterViewInit {
   @Output('onClose') onClose = new EventEmitter();
   @Output('onOpen') onOpen = new EventEmitter();
 
-  constructor() {}
+  constructor() {
+  }
   ngOnInit() {
     this.checkRequiredFields(this.data);
     this.onOpen.emit(true);
-
   }
 
   ngOnChanges(changes) {
